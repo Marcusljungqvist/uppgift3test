@@ -9,6 +9,7 @@ public class Main {
         Golf golf = new Golf();
 
 
+
         /**
          * Anropar instansmetoden person.fakta som bestämmer namn och handikapp
          */
@@ -59,7 +60,7 @@ public class Main {
 
 
             /**
-             * anropar instansmetoden golf.fråga som frågar om du vill fortsätta programmet eller inte
+             * anropar instansmetoden golf.fråga
              */
             golf.fråga();
 
