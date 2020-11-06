@@ -1,27 +1,29 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         Person person = new Person();
-        int fråga;
+        Golf golf = new Golf();
 
 
-        System.out.println("välkommen till golfprogrammet!");
-
-        /*
-         * Anropar metoden person.fakta()
+        /**
+         * Anropar instansmetoden person.fakta som bestämmer namn och handikapp
          */
         person.fakta();
 
+        /**
+         * Detta segment kör metoden Golf.medellängd som sätter värdet-
+         * -på hur många meter användaren slår med en Järn 7a
+         */
 
+        golf.klubba(golf.medellängd);
         while (true) {
             System.out.println("hur långt slår du en järn 7a i meter?");
             try {
-                Golf.medellängd = scanner.nextInt();
+                golf.medellängd = scanner.nextInt();
                 break;
             } catch (Exception e) {
                 scanner.nextLine();
@@ -29,15 +31,20 @@ public class Main {
             }
         }
 
-        System.out.println("Du har " + Golf.vind + "meter per sekund" + " i motvind vilken ger 10% mindre längd");
+        System.out.println("Du har " + golf.vind + "meter per sekund" + " i motvind vilken ger 10% mindre längd");
 
+        /**
+         * Detta segment ska upprepas så länge spelaren är på golfbanan -
+         * - men kan även avslutas om spelaren har spelat färdigt
+         * Anropar metoden Golf.meterkvar som sätter värdet på hur många meter man har till hålet
+         */
         while (true) {
             System.out.println("Hur långt har du till hålet ?");
             System.out.println("-----------------------------");
             while (true) {
 
                 try {
-                    Golf.meterkvar = scanner.nextInt();
+                    golf.meterkvar = scanner.nextDouble();
                     break;
                 } catch (Exception e) {
                     scanner.nextLine();
@@ -45,29 +52,18 @@ public class Main {
                 }
             }
             System.out.println("-----------------------------");
-            double[] längdpåjärnsjuan = Golf.klubba(Golf.medellängd); //räkna ut längden på järnsjuan
-            double[] vind = Golf.vind(längdpåjärnsjuan); //lägg på vinden
-            double vilkenklubba = Golf.längduträkning(vind); // vilken klubba ska jag använda?
 
-            while (true) {
-                try {
-                    System.out.println("\nSkriv '1' för att slå igen eller '2' för att avsluta.");
-                    fråga = scanner.nextInt();
-                    if (fråga == 1 || fråga == 2)
-                        break;
-                } catch (Exception e) {
-                    scanner.next();
-                    System.out.println("Något blev fel!, försök igen.");
-                }
-            }
+            double[] längdpåjärnsjuan = golf.klubba(golf.medellängd); //räkna ut längden på järnsjuan
+            double[] vind =  golf.vind(längdpåjärnsjuan); //lägg på vinden
+            double vilkenklubba = golf.längduträkning(vind); // vilken klubba ska jag använda?
 
-            switch (fråga) {
-                case 1:
-                    break;
-                case 2:
-                    System.exit(0);
 
-            }
+            /**
+             * anropar instansmetoden golf.fråga som frågar om du vill fortsätta programmet eller inte
+             */
+            golf.fråga();
+
+
         }
     }
 }

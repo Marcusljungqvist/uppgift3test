@@ -2,21 +2,26 @@ import java.util.Scanner;
 
 public class Person {
 
+   Scanner scanner = new Scanner(System.in);
+
+   //privata Instansvariabler
    private String namn;
    private double handikapp;
-   Scanner scanner = new Scanner(System.in);
 
 
    /**
-    * Metoden som tar emot data från användaren, initierar instansvariabler och returnerar dessa.
+    * Instansmetodmetoden som tar emot data från användaren, initierar instansvariabler och returnerar dessa.
+    * @return Namn och handikapp
     */
-   public void fakta() {
+   public String fakta() {
+      System.out.println("välkommen till golfprogrammet!");
+      System.out.println("--------------------------------\n");
       System.out.println("Vad heter du och vad har du för handikapp ( exempel 10,3 ) ?");
 
       while (true){
          try {
-            namn = scanner.nextLine();
-            handikapp = scanner.nextDouble();
+            this.namn = scanner.nextLine();
+            this.handikapp = scanner.nextDouble();
             break;
          } catch (Exception e) {
             scanner.nextLine();
@@ -25,6 +30,7 @@ public class Person {
       }
       System.out.println("Hej " + namn + " du har " + handikapp + " i handikapp");
 
+      return this.namn + this.handikapp;
    }
 }
 

@@ -1,22 +1,33 @@
+import java.util.Scanner;
+
 public class Golf {
+    Scanner scanner = new Scanner(System.in);
 
-    static int meterkvar;
-    static int medellängd;
-    static int vind = 5;
+    //package private instansvariabler
 
-    private static double Driver;
-    private static double Spoon;
-    private static double Järnfyra;
-    private static double Järnfemma;
-    private static double Järnsexa;
-    private static double Järnsjua;
-    private static double Järnåtta;
-    private static double Järnnia;
-    private static double Pitch;
-    private static double Sandwedge;
+    double meterkvar;
+    int medellängd;
+    int vind = 5;
 
+    //privata instansvariabler
+    private int fråga;
+    private double Driver;
+    private double Spoon;
+    private double Järnfyra;
+    private double Järnfemma;
+    private double Järnsexa;
+    private double Järnsjua;
+    private double Järnåtta;
+    private double Järnnia;
+    private double Pitch;
+    private double Sandwedge;
 
-    public static double[] vind(double[] klubba){
+    /**
+     * En metod som beräknar längden man slår * vinden
+     * @param klubba är en kopia på arrayen klubba
+     * @returnar klubbornas längd * vinden i en array
+     */
+    public double[] vind(double[] klubba){
 
 
         double[] vind = klubba.clone();
@@ -36,37 +47,36 @@ public class Golf {
         return vind;
     }
 
-
-    public static double[] klubba(int längd) {
+    /**
+     * En metod som beräknar hur långt man slår med de olika klubborna
+     * @param medellängd längden på Järnsjuan
+     * @return  klubbornas längd i form av en array
+     */
+    public double[] klubba(int medellängd) {
 
         double[] klubbor = new double[10];
 
-        Driver = längd * 1.8;
-        Spoon = längd * 1.5;
-        Järnfyra = längd * 1.3;
-        Järnfemma = längd * 1.15;
-        Järnsexa = längd * 1.07;
-        Järnsjua = längd;
-        Järnåtta = längd * 0.95;
-        Järnnia = längd * 0.85;
-        Pitch = längd * 0.80;
-        Sandwedge = längd * 0.7;
+        Driver = medellängd * 1.8;
+        Spoon = medellängd * 1.5;
+        Järnfyra = medellängd * 1.3;
+        Järnfemma = medellängd * 1.15;
+        Järnsexa = medellängd * 1.07;
+        Järnsjua = medellängd;
+        Järnåtta = medellängd * 0.95;
+        Järnnia = medellängd * 0.85;
+        Pitch = medellängd * 0.80;
+        Sandwedge = medellängd * 0.7;
 
-        klubbor[0] = Driver;
-        klubbor[1] = Spoon;
-        klubbor[2] = Järnfyra;
-        klubbor[3] = Järnfemma;
-        klubbor[4] = Järnsexa;
-        klubbor[5] = Järnsjua;
-        klubbor[6] = Järnåtta;
-        klubbor[7] = Järnnia;
-        klubbor[8] = Pitch;
-        klubbor[9] = Sandwedge;
 
         return klubbor;
     }
 
-    public static double längduträkning(double[] klubba) {
+    /**
+     * En klassmetod som räknar ut vilken klubba man bör använda
+     * @param klubba är klubborna
+     * @returnar vilken klubba man ska använda
+     */
+    public double längduträkning(double[] klubba) {
 
 
         if (meterkvar >= klubba[0])
@@ -100,5 +110,33 @@ public class Golf {
             System.out.println("du ska använda en Sandwedge");
 
         return meterkvar;
+    }
+
+    /**
+     * En instansmetod som tar emot data från användaren och sätter värde på instansvariabeln och returnerar desssa
+     * @return 1 eller 2
+     */
+    public String fråga(){
+
+        while (true) {
+            try {
+                System.out.println("\nSkriv '1' för att slå igen eller '2' för att avsluta.");
+                fråga = scanner.nextInt();
+                if (fråga == 1 || fråga == 2)
+                    break;
+            } catch (Exception e) {
+                scanner.next();
+                System.out.println("Något blev fel!, försök igen.");
+            }
+        }
+
+        switch (fråga) {
+            case 1:
+                break;
+            case 2:
+                System.exit(0);
+
+        }
+        return null;
     }
 }
