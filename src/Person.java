@@ -2,8 +2,6 @@ import java.util.Scanner;
 
 public class Person {
 
-   private Scanner scanner = new Scanner(System.in);
-
    //privata Instansvariabler
    private String namn;
    private double handikapp;
@@ -14,6 +12,7 @@ public class Person {
     * @return Namn och handikapp
     */
    public String fakta() {
+      Scanner scanner = new Scanner(System.in);
       System.out.println("välkommen till golfprogrammet!");
       System.out.println("--------------------------------\n");
       System.out.println("Vad heter du och vad har du för handikapp ( exempel 10,3 ) ?");

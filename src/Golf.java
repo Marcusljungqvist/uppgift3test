@@ -1,10 +1,8 @@
 import java.util.Scanner;
 
 public class Golf {
-    private Scanner scanner = new Scanner(System.in);
 
     //package private instansvariabler
-
     double meterkvar;
     int medellängd;
     int vind = 5;
@@ -21,6 +19,30 @@ public class Golf {
     private double Järnnia;
     private double Pitch;
     private double Sandwedge;
+
+    /**
+     * En instansmetod som beräknar hur långt man slår med de olika klubborna
+     * @param medellängd längden på Järnsjuan
+     * @return  klubbornas längd i form av en array
+     */
+    public double[] klubba(int medellängd) {
+
+        double[] klubbor = new double[10];
+
+        Driver = medellängd * 1.8;
+        Spoon = medellängd * 1.5;
+        Järnfyra = medellängd * 1.3;
+        Järnfemma = medellängd * 1.15;
+        Järnsexa = medellängd * 1.07;
+        Järnsjua = medellängd;
+        Järnåtta = medellängd * 0.95;
+        Järnnia = medellängd * 0.85;
+        Pitch = medellängd * 0.80;
+        Sandwedge = medellängd * 0.7;
+
+
+        return klubbor;
+    }
 
     /**
      * En instansmetod som beräknar längden man slår * vinden
@@ -45,30 +67,6 @@ public class Golf {
 
 
         return vind;
-    }
-
-    /**
-     * En instansmetod som beräknar hur långt man slår med de olika klubborna
-     * @param medellängd längden på Järnsjuan
-     * @return  klubbornas längd i form av en array
-     */
-    public double[] klubba(int medellängd) {
-
-        double[] klubbor = new double[10];
-
-        Driver = medellängd * 1.8;
-        Spoon = medellängd * 1.5;
-        Järnfyra = medellängd * 1.3;
-        Järnfemma = medellängd * 1.15;
-        Järnsexa = medellängd * 1.07;
-        Järnsjua = medellängd;
-        Järnåtta = medellängd * 0.95;
-        Järnnia = medellängd * 0.85;
-        Pitch = medellängd * 0.80;
-        Sandwedge = medellängd * 0.7;
-
-
-        return klubbor;
     }
 
     /**
@@ -117,6 +115,7 @@ public class Golf {
      * @return 1 eller 2
      */
     public String fråga(){
+        Scanner scanner = new Scanner(System.in);
 
         while (true) {
             try {
