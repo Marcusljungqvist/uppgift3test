@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Golf {
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
     //package private instansvariabler
 

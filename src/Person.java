@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Person {
 
-   Scanner scanner = new Scanner(System.in);
+   private Scanner scanner = new Scanner(System.in);
 
    //privata Instansvariabler
    private String namn;
