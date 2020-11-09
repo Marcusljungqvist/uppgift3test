@@ -32,16 +32,17 @@ public class Golf {
 
         double[] klubbor = new double[10];
 
-        Driver = medellängd * 1.8;
-        Spoon = medellängd * 1.5;
-        Järnfyra = medellängd * 1.3;
-        Järnfemma = medellängd * 1.15;
-        Järnsexa = medellängd * 1.07;
-        Järnsjua = medellängd;
-        Järnåtta = medellängd * 0.95;
-        Järnnia = medellängd * 0.85;
-        Pitch = medellängd * 0.80;
-        Sandwedge = medellängd * 0.7;
+        klubbor[0] = Driver = medellängd * 1.8;
+        klubbor[1] = Spoon = medellängd * 1.5;
+        klubbor[2] = Järnfyra = medellängd * 1.3;
+        klubbor[3] = Järnfemma = medellängd * 1.15;
+        klubbor[4] = Järnsexa = medellängd * 1.07;
+        klubbor[5] = Järnsjua = medellängd;
+        klubbor[6] = Järnåtta = medellängd * 0.95;
+        klubbor[7] = Järnnia = medellängd * 0.85;
+        klubbor[8] = Pitch = medellängd * 0.80;
+        klubbor[9] = Sandwedge = medellängd * 0.7;
+
 
         return klubbor;
     }

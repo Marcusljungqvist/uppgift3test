@@ -14,8 +14,8 @@ public class Main {
         /**
          * Anropar instansmetoden person.fakta som bestämmer namn och handikapp
          */
-        person.fakta();
 
+        person.fakta();
         /**
          * Detta segment kör metoden Golf.medellängd som sätter värdet-
          * -på hur många meter användaren slår med en Järn 7a
