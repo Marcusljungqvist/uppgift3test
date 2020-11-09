@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -20,7 +21,6 @@ public class Main {
          * -på hur många meter användaren slår med en Järn 7a
          */
 
-        golf.klubba(golf.medellängd);
         while (true) {
             System.out.println("hur långt slår du en järn 7a i meter?");
             try {
@@ -31,7 +31,6 @@ public class Main {
                 System.out.println("Meter kan bara skrivas i siffror, försök igen");
             }
         }
-
         System.out.println("Du har " + golf.vind + "meter per sekund" + " i motvind vilken ger 10% mindre längd");
 
         /**
@@ -54,10 +53,9 @@ public class Main {
             }
             System.out.println("-----------------------------");
 
-            double[] längdpåjärnsjuan = golf.klubba(golf.medellängd); //räkna ut längden på järnsjuan
-            double[] vind =  golf.vind(längdpåjärnsjuan); //lägg på vinden
+            double[] klubbornaslängd = golf.klubba(golf.medellängd); //räkna ut längden på klubborna
+            double[] vind =  golf.vind(klubbornaslängd); //lägg på vinden
             double vilkenklubba = golf.längduträkning(vind); // vilken klubba ska jag använda?
-
 
             /**
              * anropar instansmetoden golf.fråga

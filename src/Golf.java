@@ -1,3 +1,6 @@
+import com.sun.security.jgss.GSSUtil;
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Golf {
@@ -22,10 +25,10 @@ public class Golf {
 
     /**
      * En instansmetod som beräknar hur långt man slår med de olika klubborna
-     * @param medellängd längden på Järnsjuan
+     * @param medel längden på Järnsjuan
      * @return  klubbornas längd i form av en array
      */
-    public double[] klubba(int medellängd) {
+    public double[] klubba(int medel) {
 
         double[] klubbor = new double[10];
 
@@ -39,7 +42,6 @@ public class Golf {
         Järnnia = medellängd * 0.85;
         Pitch = medellängd * 0.80;
         Sandwedge = medellängd * 0.7;
-
 
         return klubbor;
     }
@@ -64,7 +66,6 @@ public class Golf {
         vind[7] = Järnnia * 0.9;
         vind[8] = Pitch * 0.9;
         vind[9] = Sandwedge * 0.9;
-
 
         return vind;
     }
