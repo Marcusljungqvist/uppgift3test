@@ -23,9 +23,9 @@ public class Golf {
     private double Sandwedge;
 
     /**
-     * En metod som beräknar längden man slår * vinden
+     * En instansmetod som beräknar längden man slår * vinden
      * @param klubba är en kopia på arrayen klubba
-     * @returnar klubbornas längd * vinden i en array
+     * @return klubbornas längd * vinden sparas i en array
      */
     public double[] vind(double[] klubba){
 
@@ -48,7 +48,7 @@ public class Golf {
     }
 
     /**
-     * En metod som beräknar hur långt man slår med de olika klubborna
+     * En instansmetod som beräknar hur långt man slår med de olika klubborna
      * @param medellängd längden på Järnsjuan
      * @return  klubbornas längd i form av en array
      */
@@ -72,7 +72,7 @@ public class Golf {
     }
 
     /**
-     * En klassmetod som räknar ut vilken klubba man bör använda
+     * En instansmetod som räknar ut vilken klubba man bör använda
      * @param klubba är klubborna
      * @returnar vilken klubba man ska använda
      */

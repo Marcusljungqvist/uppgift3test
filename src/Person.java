@@ -20,8 +20,8 @@ public class Person {
 
       while (true){
          try {
-            this.namn = scanner.nextLine();
-            this.handikapp = scanner.nextDouble();
+            namn = scanner.nextLine();
+            handikapp = scanner.nextDouble();
             break;
          } catch (Exception e) {
             scanner.nextLine();
